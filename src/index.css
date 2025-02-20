@@ -1,0 +1,36 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@import "tailwindcss";
+
+
+body {
+  font-family: "Montserrat";
+}
+
+.text-title {
+  font-weight: 600;
+  font-size: 21px;
+  margin-bottom: 10px;
+}
+.text-normal {
+  font-weight: 500;
+  font-size: 16px;
+}
+.text-small {
+  font-weight: 400;
+  font-size: 12px;
+  opacity: 0.8;
+}
+.input-normal {
+  border: 1px solid violet;
+  border-radius: 4px;
+  padding: 0 10px;
+}
+.button-normal {
+  background-color: rgb(246 51 154);
+  color: white;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+.button-normal:hover {
+  background-color: rgb(246 51 154 / 0.8);
+}
