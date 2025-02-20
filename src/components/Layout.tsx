@@ -9,9 +9,9 @@ export const Layout = ({ children }: Props) => {
       <header className="border-b border-pink-500 w-[260px] py-[5px]">
         <nav>
             <ul className="flex justify-between items-center">
-                <li><Link to={'/'}>Create</Link></li>
-                <li><Link to={'/scan-qrcode'}>Scan</Link></li>
-                <li><Link to={'/history'}>History</Link></li>
+                <li><Link to={'/react-ts-tailwind-qrcode'}>Create</Link></li>
+                <li><Link to={'/react-ts-tailwind-qrcode/scan-qrcode'}>Scan</Link></li>
+                <li><Link to={'/react-ts-tailwind-qrcode/history'}>History</Link></li>
             </ul>
         </nav>
       </header>

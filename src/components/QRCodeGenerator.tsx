@@ -8,8 +8,10 @@ export const QRCodeGenerator = () => {
   const [textValue, setTextValue] = useState("");
   const [submittedText, setSubmittedText] = useState("");
   const [showError, setShowError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const errorHandler = () => {
+  const errorHandler = (text: string) => {
+    setErrorMessage(text);
     setShowError(true);
     setTimeout(() => {
       setShowError(false);
@@ -18,17 +20,23 @@ export const QRCodeGenerator = () => {
 
   const handleCreateQRCode = () => {
     if (!textValue) {
-      errorHandler();
+      errorHandler("Please enter a text");
+      return;
+    }
+
+    const storageGenerateData = localStorage.getItem(GENERATE_DATA);
+    const generateData: string[] = storageGenerateData
+      ? JSON.parse(storageGenerateData)
+      : [];
+      
+    if (generateData.includes(textValue)) {
+      errorHandler("This code already exists, go to history page");
       return;
     }
 
     setSubmittedText(textValue);
     setTextValue("");
 
-    const storageGenerateData = localStorage.getItem(GENERATE_DATA);
-    const generateData: string[] = storageGenerateData
-      ? JSON.parse(storageGenerateData)
-      : [];
 
     localStorage.setItem(
       GENERATE_DATA,
@@ -42,7 +50,7 @@ export const QRCodeGenerator = () => {
     <div className="container border border-pink-500 rounded-sm px-[15px] py-[10px]">
       {showError && (
         <p className="absolute top-[88px] left-[50%] transform -translate-x-1/2 py-[2px] px-[7px] bg-white text-center text-red-500 text-small">
-          Please enter a text
+          {errorMessage}
         </p>
       )}
       <h1 className="text-center text-title">Generate QR Code</h1>

@@ -13,10 +13,14 @@ export const QRCodeScanner = () => {
   const scanHandler = async (detectedCodes: IDetectedBarcode[]) => {
     if (!detectedCodes.length) return;
 
-    setScanningResult(detectedCodes[0].rawValue);
-
     const storageScanData = localStorage.getItem(SCAN_DATA);
     const scanData: string[] = storageScanData ? JSON.parse(storageScanData) : [];
+
+    setScanningResult(detectedCodes[0].rawValue);
+
+    if (scanData.includes(detectedCodes[0].rawValue)) {
+      return;
+    }
 
     localStorage.setItem(
       SCAN_DATA,
