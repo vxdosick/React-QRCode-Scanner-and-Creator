@@ -31,7 +31,7 @@ export const History = () => {
           <li>
             <Link
               className="button-normal px-[15px] py-[2px]"
-              to={"/react-ts-tailwind-qrcode/history/generated"}
+              to={"/history/generated"}
             >
               Generated
             </Link>
@@ -39,7 +39,7 @@ export const History = () => {
           <li>
             <Link
               className="button-normal px-[15px] py-[2px]"
-              to={"/react-ts-tailwind-qrcode/history/scanned"}
+              to={"/history/scanned"}
             >
               Scanned
             </Link>

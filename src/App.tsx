@@ -14,9 +14,9 @@ function App() {
     <Router>
       <Layout>
         <Routes>
-          <Route path="/react-ts-tailwind-qrcode" element={<QRCodeGenerator />}></Route>
-          <Route path="react-ts-tailwind-qrcode/scan-qrcode" element={<QRCodeScanner />}></Route>
-          <Route path="/react-ts-tailwind-qrcode/history" element={<History />}>
+          <Route path="/" element={<QRCodeGenerator />}></Route>
+          <Route path="/scan-qrcode" element={<QRCodeScanner />}></Route>
+          <Route path="/history" element={<History />}>
             <Route path="generated" element={<HistoryGenerated />}></Route>
             <Route path="scanned" element={<HistoryScanned />}></Route>
             <Route path="" element={<HistoryHero />}></Route>
