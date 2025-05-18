@@ -30,7 +30,7 @@ export const Layout = ({ children }: Props) => {
             vxdosick
           </a>
           <p>Strength in consistency</p>
-          <p>&copy; {new Date().getFullYear()}</p>
+          <p>&copy; {new Date().getFullYear() > 2025 ? "2025 - " : ""}{new Date().getFullYear()}</p>
         </div>
       </footer>
     </div>
